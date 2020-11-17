@@ -42,13 +42,8 @@ class LinkedList:
         new_node_end = Node(new_node)
         temp_head = self.head
         while temp_head.next:
-            print(temp_head.data)
-            if temp_head.next is None:
-                print('none')
-                new_node_end = temp_head
-            else:
-                temp_head = temp_head.next
-                new_node_end = temp_head
+            temp_head = temp_head.next
+        temp_head.next = new_node_end
 
     # Implement addition at the middle functionality
     def addMiddle(self, new_node):
