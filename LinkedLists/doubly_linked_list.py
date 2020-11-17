@@ -26,7 +26,7 @@ class DoublyLinkedList:
 
     def printDll(self):
         temp_iterator = self.head
-        while temp_iterator is True:
+        while temp_iterator is not None:
             print(temp_iterator.data)
             temp_iterator = temp_iterator.next
 
