@@ -40,14 +40,32 @@ class LinkedList:
     # Implement addition at the end functionality
     def addEnd(self, new_node):
         new_node_end = Node(new_node)
+
+        # creating a temporary head
         temp_head = self.head
+
+        # keep looping until the head doesn't have anything next
         while temp_head.next:
             temp_head = temp_head.next
         temp_head.next = new_node_end
 
     # Implement addition at the middle functionality
-    def addMiddle(self, new_node):
-        pass
+    def removeNode(self, new_node):
+        new_node_removed = Node(new_node)
+        temp_head = self.head
+
+        #  removing the first element
+        if self.head.data == new_node_removed.data:
+            temp_head = temp_head.next
+            self.head = temp_head
+
+        #  for removing the any other element other than the first element
+        while temp_head.next:
+            if temp_head.next.data == new_node:
+                temp_head.next = temp_head.next.next
+                break
+            else:
+                temp_head = temp_head.next
 
 
 if __name__ == '__main__':
@@ -71,4 +89,7 @@ if __name__ == '__main__':
 
     # Testing adding at the end
     linked_list_object.addEnd(55)
+
+    # Testing removing any key in the LinkedList
+    linked_list_object.removeNode(3)
     linked_list_object.PrintLinkedList()
