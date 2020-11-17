@@ -31,6 +31,29 @@ class LinkedList:
             print(temporary_head.data)
             temporary_head = temporary_head.next
 
+    # Implement addition at the beginning functionality
+    def addBeginning(self, new_node):
+        new_node_beg = Node(new_node)
+        new_node_beg.next = self.head
+        self.head = new_node_beg
+
+    # Implement addition at the end functionality
+    def addEnd(self, new_node):
+        new_node_end = Node(new_node)
+        temp_head = self.head
+        while temp_head.next:
+            print(temp_head.data)
+            if temp_head.next is None:
+                print('none')
+                new_node_end = temp_head
+            else:
+                temp_head = temp_head.next
+                new_node_end = temp_head
+
+    # Implement addition at the middle functionality
+    def addMiddle(self, new_node):
+        pass
+
 
 if __name__ == '__main__':
     # Creating a LinkedList object
@@ -48,4 +71,9 @@ if __name__ == '__main__':
     second.next = third
     third.next = fourth
 
+    # Testing adding in the beginning
+    linked_list_object.addBeginning(99)
+
+    # Testing adding at the end
+    linked_list_object.addEnd(55)
     linked_list_object.PrintLinkedList()
