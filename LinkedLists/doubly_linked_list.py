@@ -67,4 +67,7 @@ if __name__ == '__main__':
     doubly_linked_list.insertBack(99)
     # Printing the list
     doubly_linked_list.printDll()
+    print('---')
+    # Adding a desired number to a desired index
+    doubly_linked_list.insertIndex(10,3)
     doubly_linked_list.printDll()
